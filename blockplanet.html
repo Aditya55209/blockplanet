@@ -1,0 +1,68 @@
+<!DOCTYPE html>
+<html>
+
+<head>
+  <meta charset="UTF-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1">
+  <title></title>
+  <style>
+        @import url('https://fonts.googleapis.com/css2?family=Poppins:wght@500&family=Roboto:wght@500&display=swap'); 
+    body{
+      background-color: darkslateblue;
+      font-family: 'Poppins', sans-serif;
+      display: flex ;
+      align-items: center ;
+      justify-content: center ;
+      user-select: none ;
+      min-height: 100vh;
+    }
+   .h22{
+      color: white ;
+      font-size: 2em ;
+      font-weight: 800 ;
+      display: block;
+    }
+   .con{
+     text-align: center ;
+   }
+ 
+ #demo{
+   color: white ;
+   padding: 8px ;
+   background: black;
+   border-radius: 3px ;
+ }
+.sdj{
+   color: orange;
+   font-weight: 600;
+}
+  </style>
+</head>
+
+<body>
+  
+<div class="con">
+  <span class="h22">Block Planet.</span>
+  <span class="sdj">We Are Under Construction</span>
+<p id="demo"></p>
+</div>
+<script>
+var countDownDate = new Date("Jan 1, 2023 15:37:25").getTime();
+var x = setInterval(function() {
+  var now = new Date().getTime();
+  var distance = countDownDate - now;
+  var days = Math.floor(distance / (1000 * 60 * 60 * 24));
+  var hours = Math.floor((distance % (1000 * 60 * 60 * 24)) / (1000 * 60 * 60));
+  var minutes = Math.floor((distance % (1000 * 60 * 60)) / (1000 * 60));
+  var seconds = Math.floor((distance % (1000 * 60)) / 1000);
+  document.getElementById("demo").innerHTML = days + "d " + hours + "h "
+  + minutes + "m " + seconds + "s ";
+  if (distance < 0) {
+    clearInterval(x);
+    document.getElementById("demo").innerHTML = "EXPIRED";
+  }
+}, 1000);
+</script>
+</body>
+
+</html>
